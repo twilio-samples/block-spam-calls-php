@@ -1,26 +1,27 @@
+<!-- markdownlint-disable MD013 -->
 # Block Spam Calls with PHP and Twilio
 
-![testing workflow](https://github.com/settermjd/block-spam-calls-php/actions/workflows/php.yml/badge.svg)
+![testing workflow][testing_workflow_url]
 
 This project shows how to use two Twilio Add-ons ([Marchex Clean Call][marchex_clean_call_url] and [Nomorobo Spam Score][nomorobo_spam_score_url].) from [the Twilio Add-ons Marketplace][twilio_addons_url] to block unwanted voice calls.
 
 ## How Does It Work?
 
-The application is a small web application built around the Slim Framework. 
+The application is a small web application built around the Slim Framework.
 When your Twilio number receives an inbound call, this code will check the spam rating of the phone number using both of the spam Add-ons.
 If both of them deem the number to be spam, then the number will be blocked.
 Otherwise, if the number is **not** deemed to be spam, the call will be forwarded to the customer
 
 ## Why Use the Application?
 
-The application is a simple example of how to integrate Add-ons from the Twilio Marketplace into your application to help you determine if inbound phone calls are spam or not, i.e., telemarketers, auto-dialers, accidental hang ups, and outright spam callers.
+The application is a simple example of how to integrate Add-ons from the Twilio Marketplace into your application to help you determine if inbound phone calls are spam or not, i.e., telemarketers, auto-dialers, accidental hang-ups, and outright spam callers.
 By using these Add-ons, you can save wasting your time answering unnecessary calls.
 
 ## Prerequisites
 
 To use this application, you're going to need:
 
-- A Twilio account (either free or paid) with a [Twilio phone number][twilio_phone_number_setup_url] that can handle phone calls. 
+- A Twilio account (either free or paid) with a [Twilio phone number][twilio_phone_number_setup_url] that can handle phone calls.
   If you are new to Twilio, [create a free account][twilio_referral_url].
 - PHP 8.3
 - [Composer][composer_url] installed globally
@@ -30,15 +31,15 @@ To use this application, you're going to need:
 
 ### Install the Add-ons
 
-The following guide will help you to [install Add-ons](https://www.twilio.com/docs/add-ons/install). You can access the Add-ons in [the Twilio console](https://www.twilio.com/console/add-ons). 
+The following guide will help you to [install Add-ons][twilio_addons_install]. You can access the Add-ons in [the Twilio console][twilio_console_addons_url].
 The Spam Filtering Add-ons that are used on this application are (as mentioned earlier):
 
-- [Marchex Clean Call](https://showcase.twilio.com/s/partner-listing/a8E1W00000097QxUAI)
-- [Nomorobo Spam Score](https://showcase.twilio.com/s/partner-listing/a8E1W00000097R7UAI)
+- [Marchex Clean Call][marchex_clean_call_url]
+- [Nomorobo Spam Score][nomorobo_spam_score_url]
 
-Once you've selected the Add-on, click on the **Install** button. 
-Then, you will see a pop-up window where you should read and agree the terms. 
-After that, click the **Agree & Install** button. 
+Once you've selected the Add-on, click on the **Install** button.
+Then, you will see a pop-up window where you should read and agree the terms.
+After that, click the **Agree & Install** button.
 For this application, you just need to handle the incoming voice calls, so make sure that the **Incoming Voice Call** box for **Use In** is checked, then click **Save**.
 
 ### Set up the Application
@@ -77,8 +78,8 @@ composer serve
 
 ### Expose the Application to the Public Internet
 
-To forward incoming calls, your development server will need to be publicly accessible. 
-We recommend using [ngrok](https://www.twilio.com/blog/2015/09/6-awesome-reasons-to-use-ngrok-when-testing-webhooks.html) to do this, by running the following command:
+To forward incoming calls, your development server will need to be publicly accessible.
+We recommend using [ngrok][ngrok_testing_webhooks_url] to do this, by running the following command:
 
 ```bash
 ngrok http 8080
@@ -112,7 +113,7 @@ If you want to contribute to the project, whether you have found issues with it 
 
 ## Resources
 
-- The CodeExchange repository can be found [here](https://github.com/twilio-labs/code-exchange/).
+- [Check out the CodeExchange repository][code_exchange_url] for more information.
 
 ## Did You Find The Project Useful?
 
@@ -129,18 +130,20 @@ If the project was useful and you want to say thank you and/or support its activ
 
 No warranty expressed or implied. Software is as is.
 
+[code_exchange_url]: https://github.com/twilio-labs/code-exchange/
 [composer_url]: https://getcomposer.org
 [issues_url]: https://github.com/settermjd/block-spam-calls-php/issues
-[marchex_clean_call_url]: https://www.twilio.com/console/add-ons/XBac2c99d9c684a765ced0b18cf0e5e1c7
-[ngrok_url]: https://ngrok.com/
-[ngrok_url]: https://ngrok.com/
-[nomorobo_spam_score_url]: https://www.twilio.com/console/add-ons/XB06d5274893cc9af4198667d2f7d74d09
+[marchex_clean_call_url]: https://console.twilio.com/us1/develop/add-ons/catalog/XBac2c99d9c684a765ced0b18cf0e5e1c7
+[mit_license_url]: http://www.opensource.org/licenses/mit-license.html
+[ngrok_testing_webhooks_url]: https://www.twilio.com/blog/2015/09/6-awesome-reasons-to-use-ngrok-when-testing-webhooks.html
+[ngrok_url]: https://ngrok.com
+[nomorobo_spam_score_url]: https://console.twilio.com/us1/develop/add-ons/catalog/XB06d5274893cc9af4198667d2f7d74d09
 [pull_requests_url]: https://github.com/settermjd/block-spam-calls-php/pulls
-[slim_url]: https://www.slimframework.com/
-[twilio]: https://www.twilio.com
+[testing_workflow_url]: https://github.com/settermjd/block-spam-calls-php/actions/workflows/php.yml/badge.svg
+[twilio_addons_install]: https://www.twilio.com/docs/add-ons/install
+[twilio_addons_url]: https://twilio.com/add-ons/
+[twilio_console_addons_url]: https://www.twilio.com/console/add-ons
 [twilio_console_url]: https://www.twilio.com/console
 [twilio_phone_number_setup_url]: https://www.twilio.com/console/phone-numbers/incoming
-[twilio_addons_url]: https://twilio.com/add-ons/
-[twilio_auth_token_url]: https://help.twilio.com/articles/223136027-Auth-Tokens-and-How-to-Change-Them 
-[twilio_referral_url]: https://www.twilio.com/referral/QlBtVJ
-[mit_license_url]: http://www.opensource.org/licenses/mit-license.html
+[twilio_referral_url]: https://www.twilio.com/try-twilio
+<!-- markdownlint-enable MD013 -->

@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "markdown-link-check": "^3.13.7",
+    "markdownlint-cli2": "^0.18.1"
+  },
+  "scripts": {
+    "check-docs": "markdownlint-cli2 ./README.md && markdown-link-check ./README.md"
+  }
+}
